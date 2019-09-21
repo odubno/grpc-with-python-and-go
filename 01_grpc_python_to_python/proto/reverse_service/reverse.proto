@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package reverse;
+
+// Reverser accepts a string and returns a reversed string
+service Reverser{
+    rpc Reverse(RequestString) returns (ResponseString) {}
+}
+
+// Incoming request from client.
+message RequestString {
+    // request_string could be a string of letters or words.
+    string request_string = 1;
+}
+
+// Response from server.
+message ResponseString {
+    // original_string is the string received by the server.
+    string original_string = 1;
+    string reversed_string = 2;
+}

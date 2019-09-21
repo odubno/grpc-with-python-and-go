@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  python-server:
+    build: python/.
+    volumes:
+      - ./python:/code
+    ports:
+      - "5005:5005"
+    environment:
+      - PORT=:5005
+    command: python server/server.py
+
+  python-client:
+    build: python/.
+    volumes:
+      - ./python:/code
+    command: python -u client/client.py
+    network_mode: host
+    depends_on:
+      - python-server

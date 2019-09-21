@@ -1,0 +1,6 @@
+grpcio==1.22.0
+grpcio-tools==1.22.0
+protobuf==3.9.1
+docker-compose==1.24.1
+grpcio-testing==1.23.0
+pytest==4.6.5
